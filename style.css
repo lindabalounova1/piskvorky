@@ -17,7 +17,7 @@ body {
 }
 
 img {
-  width: 350px;
+  width: 360px;
   height: 200px;
   border-radius: 5px 5px 0 0;
 }
@@ -25,24 +25,36 @@ img {
 section {
   background-color: #283e50;
   color: white;
-  width: 350px;
+  width: 360px;
   height: 270px;
 }
 
 h1 {
   font-family: 'Lobster', cursive;
   text-align: center;
-  font-size: 42px;
+  font-size: 44px;
+  margin: 20px;
 }
 
 p {
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
   text-align: center;
-  padding: 5px;
+  line-height: 1.4;
+  display: block;
+  margin: 10px;
 }
 
 a {
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  text-align: center;
+  text-decoration-line: none;
+}
+
+.tlacitka {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -50,8 +62,9 @@ a {
   border: 5px solid, #1fcca4;
   background-color: #1fcca4;
   color: white;
-  width: 350px;
+  width: 360px;
   height: 50px;
+  padding: 15px;
 }
 
 a.pravidla:hover {
@@ -62,8 +75,11 @@ a.pravidla:hover {
   border: 5px solid, #0197f6;
   background-color: #0197f6;
   color: white;
-  width: 350px;
+  width: 360px;
   height: 50px;
+  padding: 15px;
+  border-top: 1px solid black;
+
 }
 
 a.zacatek:hover {
