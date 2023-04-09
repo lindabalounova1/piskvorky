@@ -121,6 +121,7 @@ button {
   width: 8vmin;
   background-color: transparent;
   border: 1px solid black;
+  cursor: pointer;
 
 
 }
@@ -132,4 +133,18 @@ button:hover {
 button:focus {
   background-color: #d7cdf0;
 
+}
+
+.board__field--circle {
+  background-image: url("images/circle.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+}
+
+.board__field--cross {
+  background-image: url("images/cross.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
 }
