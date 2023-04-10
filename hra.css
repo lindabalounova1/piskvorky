@@ -14,7 +14,7 @@ body {
   max-width: 80vmin;
 }
 
-.hra {
+.game {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@ body {
 
 }
 
-.uvod {
+.intro {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +41,7 @@ h1 {
   margin-bottom: 5px;
 }
 
-.levaStrana {
+.leftSide {
   display: flex;
   justify-content: flex-start;
 }
@@ -54,7 +54,7 @@ h2 {
 
 }
 
-.krouzek {
+.circle {
   border: 3px solid white;
   border-radius: 50%;
   background: none;
@@ -64,12 +64,12 @@ h2 {
   margin-left: 5px;
 }
 
-.pravaStrana {
+.rightSide {
   display: flex;
   justify-content: flex-end;
 }
 
-.domu {
+.homeIcon {
   border: 5px solid, #1fcca4;
   background-color: #1fcca4;
   width: 36px;
@@ -79,7 +79,7 @@ h2 {
   align-self: center;
 }
 
-a.domu:hover {
+a.homeIcon:hover {
   background-color: #1cbb96;
 }
 
@@ -133,6 +133,16 @@ button:hover {
 button:focus {
   background-color: #d7cdf0;
 
+}
+
+.cross {
+  background-image: url("images/cross.svg");
+  width: 24px;
+  height: 24px;
+  margin-left: 3px;
+  color: white;
+  align-self: center;
+  filter: invert(100%);
 }
 
 .board__field--circle {
