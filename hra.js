@@ -7,38 +7,42 @@ const addClass = (event) => {
     currentPlayer = 'cross';
     document.querySelector('#player').classList.remove('circle');
     document.querySelector('#player').classList.add('cross');
+    event.target.classList.add('board__field--circle');
     event.target.disabled = true;
-    return event.target.classList.add('board__field--circle');
-  }
-
-  if (currentPlayer === 'cross') {
+  } else if (currentPlayer === 'cross') {
     currentPlayer = 'circle';
     document.querySelector('#player').classList.remove('cross');
     document.querySelector('#player').classList.add('circle');
+    event.target.classList.add('board__field--cross');
     event.target.disabled = true;
-    return event.target.classList.add('board__field--cross');
   }
 };
 
-
-
-
 const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-  button.addEventListener('click', addClass);
+const allButtonsArray = Array.from(buttons).map((button) => {
+  if (button.classList.contains('board__field--circle')) {
+    return 'o';
+  }
+  if (button.classList.contains('board__field--cross')) {
+    return 'x';
+  }
+
+  return '_';
 });
 
-const winner = findWinner(playField);
+const winner = findWinner(allButtonsArray);
 if (winner === 'o') {
   setTimeout(() => {
-  alert('..and the winner is Mrs.Kolečko!');
-  location.reload();
+    alert('..and the winner is Mrs.Kolečko!');
+    location.reload();
   }, 300);
-}
-  else (winner === 'x') {
-    setTimeout(() => {
-alert('..and the winner is Mr.Křížek!');
-location.reload();
+} else if (winner === 'x') {
+  setTimeout(() => {
+    alert('..and the winner is Mr.Křížek!');
+    location.reload();
   }, 300);
 }
 
+document.querySelectorAll('button').forEach((btn) => {
+  btn.addEventListener('click', addClass);
+});
