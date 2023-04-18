@@ -1,3 +1,5 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let currentPlayer = 'circle';
 
 const addClass = (event) => {
@@ -18,13 +20,25 @@ const addClass = (event) => {
   }
 };
 
-document.querySelector('#button1').addEventListener('click', addClass);
-document.querySelector('#button2').addEventListener('click', addClass);
-document.querySelector('#button3').addEventListener('click', addClass);
-document.querySelector('#button4').addEventListener('click', addClass);
-document.querySelector('#button5').addEventListener('click', addClass);
-document.querySelector('#button6').addEventListener('click', addClass);
-document.querySelector('#button7').addEventListener('click', addClass);
-document.querySelector('#button8').addEventListener('click', addClass);
-document.querySelector('#button9').addEventListener('click', addClass);
-document.querySelector('#button10').addEventListener('click', addClass);
+
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  button.addEventListener('click', addClass);
+});
+
+const winner = findWinner(playField);
+if (winner === 'o') {
+  setTimeout(() => {
+  alert('..and the winner is Mrs.Kolečko!');
+  location.reload();
+  }, 300);
+}
+  else (winner === 'x') {
+    setTimeout(() => {
+alert('..and the winner is Mr.Křížek!');
+location.reload();
+  }, 300);
+}
+
